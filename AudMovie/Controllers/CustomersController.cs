@@ -9,36 +9,24 @@ namespace AudMovie.Controllers
 {
     public class CustomersController : Controller
     {
-		//private MyDbContext myDbContext;
+		private MyDbContext myDbContext;
+		public CustomersController()
+		{
+			myDbContext = new MyDbContext();
+		}
+		protected override void Dispose(bool disposing)
+		{
+			myDbContext.Dispose();
+		}
         // GET: Customers
         public ActionResult Index()
         {
-			var customer = new List<Customer>
-			{
-				new Customer
-				{
-					Id = 1, Name = "Denis Semko"
-				},
-				new Customer
-				{
-					Id = 2, Name = "Sonechka Bykovska"
-				}
-			};
+			var customer = myDbContext.Customers.ToList();
 			return View(customer);
         }
 		public ActionResult Details(int id)
 		{
-			var customer = new List<Customer>
-			{
-				new Customer
-				{
-					Id = 1, Name = "Denis Semko"
-				},
-				new Customer
-				{
-					Id = 2, Name = "Sonechka Bykovska"
-				}
-			}.SingleOrDefault(c => c.Id == id);
+			var customer = myDbContext.Customers.SingleOrDefault(c => c.Id == id);
 			return View(customer);
 		}
 	}

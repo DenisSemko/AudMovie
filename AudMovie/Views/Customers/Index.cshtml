@@ -1,0 +1,23 @@
+﻿@model IEnumerable<AudMovie.Models.Customer>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Customers</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var m in Model)
+		{
+			<tr>
+				<td>@Html.ActionLink(m.Name, "Details", "Customers", new { id = m.Id }, null)</td>
+			</tr>
+		}
+	</tbody>
+</table>

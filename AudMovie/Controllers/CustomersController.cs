@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AudMovie.Models;
+using System.Data.Entity;
 
 namespace AudMovie.Controllers
 {
@@ -21,7 +22,7 @@ namespace AudMovie.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-			var customer = myDbContext.Customers.ToList();
+			var customer = myDbContext.Customers.Include(c => c.MembershipType).ToList();
 			return View(customer);
         }
 		public ActionResult Details(int id)

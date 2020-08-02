@@ -157,6 +157,14 @@
     <Compile Include="Migrations\202008012128366_InsertDataCustomers.designer.cs">
       <DependentUpon>202008012128366_InsertDataCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008020657123_AddNameFieldToMembershipType.cs" />
+    <Compile Include="Migrations\202008020657123_AddNameFieldToMembershipType.designer.cs">
+      <DependentUpon>202008020657123_AddNameFieldToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008020707291_UpdateDataMembershipTypes.cs" />
+    <Compile Include="Migrations\202008020707291_UpdateDataMembershipTypes.designer.cs">
+      <DependentUpon>202008020707291_UpdateDataMembershipTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -239,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008012128366_InsertDataCustomers.resx">
       <DependentUpon>202008012128366_InsertDataCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008020657123_AddNameFieldToMembershipType.resx">
+      <DependentUpon>202008020657123_AddNameFieldToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008020707291_UpdateDataMembershipTypes.resx">
+      <DependentUpon>202008020707291_UpdateDataMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

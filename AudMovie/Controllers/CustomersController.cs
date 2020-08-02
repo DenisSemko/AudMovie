@@ -27,7 +27,7 @@ namespace AudMovie.Controllers
         }
 		public ActionResult Details(int id)
 		{
-			var customer = myDbContext.Customers.SingleOrDefault(c => c.Id == id);
+			var customer = myDbContext.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
 			return View(customer);
 		}
 	}

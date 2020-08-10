@@ -173,12 +173,22 @@
     <Compile Include="Migrations\202008020823269_UpdateCustomersDataWithBirthDate.designer.cs">
       <DependentUpon>202008020823269_UpdateCustomersDataWithBirthDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008020906552_CreateGenreChangeMovie.cs" />
+    <Compile Include="Migrations\202008020906552_CreateGenreChangeMovie.designer.cs">
+      <DependentUpon>202008020906552_CreateGenreChangeMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008020909439_InsertDataToMovies.cs" />
+    <Compile Include="Migrations\202008020909439_InsertDataToMovies.designer.cs">
+      <DependentUpon>202008020909439_InsertDataToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -228,6 +238,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -267,6 +278,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008020823269_UpdateCustomersDataWithBirthDate.resx">
       <DependentUpon>202008020823269_UpdateCustomersDataWithBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008020906552_CreateGenreChangeMovie.resx">
+      <DependentUpon>202008020906552_CreateGenreChangeMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008020909439_InsertDataToMovies.resx">
+      <DependentUpon>202008020909439_InsertDataToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

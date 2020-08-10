@@ -4,42 +4,31 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AudMovie.Models;
+using System.Data.Entity;
 
 namespace AudMovie.Controllers
 {
     public class MoviesController : Controller
     {
-		//private MyDbContext myDbContext;
+		private MyDbContext myDbContext;
+		public MoviesController()
+		{
+			myDbContext = new MyDbContext();
+		}
+		protected override void Dispose(bool disposing)
+		{
+			myDbContext.Dispose();
+		}
 		// GET: Movies
 		public ActionResult Index()
 		{
-			var movie = new List<Movie>
-			{
-				new Movie
-				{
-					Id = 1, Name = "Shrek"
-				},
-				new  Movie
-				{
-					Id = 2, Name = "Princess"
-				}
-			};
+			var movie = myDbContext.Movies.Include(m => m.Genre).ToList();
 			return View(movie);
 		}
 
 		public ActionResult Details(int id)
 		{
-			var movie = new List<Movie>
-			{
-				new Movie
-				{
-					Id = 1, Name = "Shrek"
-				},
-				new Movie
-				{
-					Id = 2, Name = "Princess"
-				}
-			}.SingleOrDefault(c => c.Id == id);
+			var movie = myDbContext.Movies.Include(m => m.Genre).SingleOrDefault(c => c.Id == id);
 			return View(movie);
 		}
 		public ActionResult Edit(int id)

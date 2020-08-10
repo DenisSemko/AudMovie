@@ -10,6 +10,7 @@
 	<thead>
 		<tr>
 			<th>Movies</th>
+			<th>Genre</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -17,6 +18,7 @@
 		{
 			<tr>
 				<td>@Html.ActionLink(m.Name, "Details", "Movies", new { id = m.Id }, null)</td>
+				<td>@m.Genre.Name</td>
 			</tr>
 		}
 	</tbody>
